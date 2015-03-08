@@ -1,6 +1,6 @@
-# compact-diff
+# compact-diff [![Circle CI](https://circleci.com/gh/suisho/compact-diff.svg?style=svg)](https://circleci.com/gh/suisho/compact-diff)
+
 Compact result diff ([kpdecker/jsdiff](https://github.com/kpdecker/jsdiff) wrapper)
-[![Circle CI](https://circleci.com/gh/suisho/compact-diff.svg?style=svg)](https://circleci.com/gh/suisho/compact-diff)
 
 
 # Usage

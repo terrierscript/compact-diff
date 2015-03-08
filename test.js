@@ -32,6 +32,15 @@ describe("Compact diff", function(){
     ]
     assert.deepEqual(result, expect)
   })
+  it("example", function(){
+    var result = diff("foogesbaz", "foodorbaz")
+    var expect = [
+      { value: "foo" },
+      { added: "dor", removed : "ges"},
+      { value: "baz" }
+    ]
+    assert.deepEqual(result, expect)
+  })
   it("insert", function(){
     var result = diff("foobaz", "foodorbaz")
     var expect = [

@@ -9,6 +9,10 @@
   "keywords": [],
   "author": "suisho",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:suisho/compact-diff.git"
+  },
   "devDependencies": {
     "espower-loader": "^0.10.0",
     "intelli-espower-loader": "^0.6.0",

@@ -33,6 +33,9 @@ module.exports = function(prev, current) {
     if(first.added && !second.removed) {
       diffStruct.push(pack(first))
     }
+    if(first.removed && !second.added) {
+      diffStruct.push(pack(first))
+    }
     if(!hasChange(second)) {
       diffStruct.push(pack(second))
     } else if(index === arr.length - 1 ){ // last

@@ -50,4 +50,13 @@ describe("Compact diff", function(){
     ]
     assert.deepEqual(result, expect)
   })
+  it("same value", function(){
+    var result = diff("foobazbaz ", "bazbazbaz")
+    var expect = [
+      { removed: "foo" },
+      { value: "bazbaz" },
+      { added: "baz"}
+    ]
+    assert.deepEqual(result, expect)
+  })
 })

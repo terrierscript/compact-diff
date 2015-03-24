@@ -19,7 +19,7 @@ var hasChange = function(diff){
   return diff.added || diff.removed
 }
 
-module.exports = function(prev, current) {
+var compactDiff = function(prev, current) {
   var diff = JsDiff.diffChars(prev, current)
   var diffStruct = []
   diff.reduce(function(first, second, index, arr) {
@@ -44,4 +44,31 @@ module.exports = function(prev, current) {
     return second
   }, {})
   return diffStruct
+}
+var reverseStr = function(str){
+  return str.split("").reverse().join("")
+}
+var reversedCompactDiff = function(prev, current){
+  var reversedPrev = reverseStr(prev)
+  var reversedCurrent = reverseStr(current)
+  var diff = compactDiff(reversedPrev, reversedCurrent)
+  return diff.reverse().map(function(d){
+    var data = {}
+    var keys = ["value", "added", "removed"]
+    keys.forEach(function(k){
+      var val = d[k]
+      if(val){
+        data[k] = reverseStr(d[k])
+      }
+    })
+    return data
+  })
+}
+module.exports = function(prev, current){
+  var diff = compactDiff(prev, current)
+  return diff
+}
+module.exports.fromRight = function(prev, current){
+  var rev = reversedCompactDiff(prev, current)
+  return rev
 }

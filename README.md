@@ -15,6 +15,19 @@ var result = compactDiff("foogesbaz", "foodorbaz")
 // ]
 ```
 
+## `fromEnding`
+
+Check diff from end of character
+
+```js
+var compactDiff = require("compact-diff")
+var result = diff.fromEnd("foobazbaz", "bazbazbaz")
+// result = [
+//   { added: "baz", removed: "foo" },
+//   { value: "bazbaz" }
+// ]
+```
+
 # Output
 This module output those array
 - `value` : Set value if not change(added or removed)

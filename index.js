@@ -45,9 +45,11 @@ var compactDiff = function(prev, current) {
   }, {})
   return diffStruct
 }
+
 var reverseStr = function(str){
   return str.split("").reverse().join("")
 }
+
 var reversedCompactDiff = function(prev, current){
   var reversedPrev = reverseStr(prev)
   var reversedCurrent = reverseStr(current)
@@ -64,11 +66,13 @@ var reversedCompactDiff = function(prev, current){
     return data
   })
 }
+
 module.exports = function(prev, current){
   var diff = compactDiff(prev, current)
   return diff
 }
-module.exports.fromRight = function(prev, current){
+
+module.exports.fromEnding = function(prev, current){
   var rev = reversedCompactDiff(prev, current)
   return rev
 }

@@ -60,7 +60,7 @@ describe("Compact diff", function(){
     assert.deepEqual(result, expect)
   })
   it("same value (right)", function(){
-    var result = diff.fromRight("foobazbaz", "bazbazbaz")
+    var result = diff.fromEnding("foobazbaz", "bazbazbaz")
     var expect = [
       { added: "baz", removed: "foo" },
       { value: "bazbaz" }

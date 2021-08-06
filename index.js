@@ -23,10 +23,10 @@ var compactDiff = function(prev, current) {
   var diff = JsDiff.diffChars(prev, current)
   var diffStruct = []
   diff.reduce(function(first, second, index, arr) {
-    if (first.added && second.removed) {
+    if (first.removed && second.added) {
       diffStruct.push({
-        added: first.value,
-        removed: second.value
+        removed: first.value,
+        added: second.value
       })
       return {}
     }
